@@ -1,0 +1,150 @@
+<!-- business.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>SkillPus-Courses List</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.10.0/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.10.0/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAjFHat32xqvNViM0aXDppSqnaDVd7_MQU",
+            authDomain: "skill-plus-fd40d.firebaseapp.com",
+            databaseURL: "https://skill-plus-fd40d-default-rtdb.firebaseio.com",
+            projectId: "skill-plus-fd40d",
+            storageBucket: "skill-plus-fd40d.appspot.com",
+            messagingSenderId: "499271595326",
+            appId: "1:499271595326:web:3a52082b5ca8b0d3dda86f",
+            measurementId: "G-6WJ9XRHPPK"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <h1>Business Courses</h1>
+    <input type="text" id="search-input" placeholder="Search for courses...">
+    <button id="search-button">Search</button>
+    <div id="course-list">
+        <!-- course list will be displayed here -->
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+
+        const courseList = document.getElementById('course-list');
+        const db = firebase.firestore();
+        const courseRef = db.collection("courses");
+
+        courseRef.orderBy("title").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const courseData = doc.data();
+                    const courseCard = document.createElement('div');
+                    courseCard.classList.add('course-card');
+                    courseCard.innerHTML = `
+          <div class="card">
+            <h3 class="card-title">${courseData.title}</h3>
+            <p class="card-text">${courseData.description}</p>
+            <button class="view-course" data-course-id="${doc.id}">View Course</button>
+          </div>
+        `;
+                    courseList.appendChild(courseCard);
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents:", error);
+            });
+
+        // Add event listener to view course button
+        courseList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('view-course')) {
+                const courseId = e.target.getAttribute('data-course-id');
+                localStorage.setItem('courseId', courseId);
+                window.location.href = 'course-template.html';
+            }
+        });
+
+        searchInput.addEventListener('input', () => {
+            const searchQuery = searchInput.value.toLowerCase();
+            const courseListItems = courseList.children;
+            for (let i = 0; i < courseListItems.length; i++) {
+                const courseListItem = courseListItems[i];
+                const courseTitle = courseListItem.querySelector('.card-title').textContent.toLowerCase();
+                if (courseTitle.includes(searchQuery)) {
+                    courseListItem.style.display = 'block';
+                } else {
+                    courseListItem.style.display = 'none';
+                }
+            }
+        });
+    </script>
+    <style>
+        /* style.css */
+        
+        #search-input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        #search-button {
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        #search-button:hover {
+            background-color: #23527c;
+        }
+        
+        .course-card {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card-text {
+            margin-bottom: 20px;
+        }
+        
+        .view-course {
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .view-course:hover {
+            background-color: #23527c;
+        }
+    </style>
+</body>
+
+</html>

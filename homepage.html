@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPlus</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-toggle">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="my-courses-link">My Courses</a></li>
+                <li><a href="#" id="calendar-link">Calendar</a></li>
+                <li><a href="#" id="skills-by-sector-link">Skills by Sector</a></li>
+                <li><a href="#" id="mentorship-link">Mentorship</a></li>
+                <li><a href="#" id="resources-link">Resources</a></li>
+                <li><a href="#" id="contact-us-link">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logo">SkillPlus</div>
+    </header>
+    <section class="hero">
+        <h1>Empowering Skills for Every Sector</h1>
+        <p>Unlock your potential with tailored mentorship and skill development.</p>
+        <button id="discover-button">Discover Your Path</button>
+        <div id="search-bar" style="display: none;">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for courses...">
+                <button id="search-button">Search</button>
+                <button id="close-button">&times;</button>
+            </div>
+            <div id="course-list">
+                <!-- course list will be displayed here -->
+            </div>
+        </div>
+    </section>
+    <section class="skills">
+        <h2>Skills by Sector</h2>
+        <p>Explore in-demand skills across multiple industries.</p>
+        <div class="sectors">
+            <div class="sector technology">
+                <h3> Technology
+                </h3>
+                <ul>
+                    <li>Programming (Python, Java, JavaScript)</li>
+                    <li>Data Analysis</li>
+                    <li>Cybersecurity</li>
+                    <li>Cloud Computing</li>
+                </ul><button onclick="window.location.href='business.html'">Learn More About Tech Skills</button></div>
+            <div class="sector business">
+                <h3>Business</h3>
+                <ul>
+                    <li>Project Management</li>
+                    <li>Digital Marketing</li>
+                    <li>Financial Analysis</li>
+                    <li>Sales Strategies</li>
+                </ul>
+                <button onclick="window.location.href='business.html'">Explore Business Skills</button>
+            </div>
+            <div class="sector medical">
+                <h3>Medical Specialties</h3>
+                <ul>
+                    <li>Surgeon</li>
+                    <li>Pediatrician</li>
+                    <li>Psychiatrist</li>
+                    <li>Anesthesiologist</li>
+                </ul>
+                <button onclick="window.location.href='business.html'">Learn More About Medical Specialties</button>
+            </div>
+            <div class="sector others">
+                <h3>Others</h3>
+                <ul>
+                    <li>Agriculture</li>
+                    <li>Literature</li>
+                    <li>Sports</li>
+                    <li>Law</li>
+                </ul>
+                <button onclick="window.location.href='business.html'">Learn More About Other Skills</button>
+            </div>
+        </div>
+    </section>
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Connect: "Sign up and choose a sector to find the right mentor."</li>
+            <li>Learn: "Engage in personalized sessions focused on your skills."</li>
+            <li>Grow: "Apply your new skills in real-world scenarios."</li>
+        </ol>
+    </section>
+    <section class="mentors">
+        <h2>Meet Our Mentors</h2>
+        <p>Experienced professionals ready to guide you.</p>
+        <div class="mentor-profiles">
+            <div class="mentor-profile active">
+                <h3>Mentor 1</h3>
+                <p>This is mentor 1.</p>
+            </div>
+            <div class="mentor-profile">
+                <h3>Mentor 2</h3>
+                <p>This is mentor 2.</p>
+            </div>
+            <div class="mentor-profile">
+                <h3>Mentor 3</h3>
+                <p>This is mentor 3.</p>
+            </div>
+            <button class="prev" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Prev</button>
+            <button class="next" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Next</button>
+        </div>
+    </section>
+    <section class="success-stories">
+        <h2>Success Stories</h2>
+        <p>See how SkillPlus has transformed careers.</p>
+        <div class="quote-carousel">
+            <div class="success-story active">
+                <h3>Story 1</h3>
+                <p>This is story 1.</p>
+            </div>
+            <div class="success-story">
+                <h3>Story 2</h3>
+                <p>This is story 2.</p>
+            </div>
+            <div class="success-story">
+                <h3>Story 3</h3>
+                <p>This is story 3.</p>
+            </div>
+        </div>
+        <button class="prev-story">Prev</button>
+        <button class="next-story">Next</button>
+    </section>
+    <section class="resources">
+        <h2>Resources</h2>
+        <p>Valuable resources to enhance your learning journey.</p>
+        <div class="featured-articles">
+            <!-- featured articles will be displayed here -->
+        </div>
+    </section>
+    <section class="get-involved">
+        <h2>Get Involved</h2>
+        <form class="get-involved">
+            <button>Become a Mentor</button>
+            <button>Join as a Mentee</button>
+        </form>
+        <p>Contribute to the community or seek guidance—SkillPlus welcomes you!</p>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <!-- social media links will be displayed here -->
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Enter your email address">
+                <button>Subscribe</button>
+            </form>
+        </div>
+    </footer>
+    <script src="homescript.js"></script>
+</body>
+
+</html>

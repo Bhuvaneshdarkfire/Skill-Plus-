@@ -1,0 +1,226 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPlus</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-toggle">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="login-link">Login</a></li>
+                <li><a href="#" id="skills-by-sector-link">Skills by Sector</a></li>
+                <li><a href="#" id="mentorship-link">Mentorship</a></li>
+                <li><a href="#" id="resources-link">Resources</a></li>
+                <li><a href="#" id="contact-us-link">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logo">SkillPlus</div>
+    </header>
+    <section class="hero">
+        <h1>Empowering Skills for Every Sector</h1>
+        <p>Unlock your potential with tailored mentorship and skill development.</p>
+        <button id="discover-button">Discover Your Path</button>
+        <div id="search-bar" style="display: none;">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for courses...">
+                <button id="search-button">Search</button>
+                <button id="close-button">&times;</button>
+            </div>
+            <div id="course-list">
+                <!-- course list will be displayed here -->
+            </div>
+        </div>
+    </section>
+    <section class="skills">
+        <h2>Skills by Sector</h2>
+        <p>Explore in-demand skills across multiple industries.</p>
+        <div class="sectors">
+            <div class="sector technology">
+                <h3> Technology
+                </h3>
+                <ul>
+                    <li>Programming (Python, Java, JavaScript)</li>
+                    <li>Data Analysis</li>
+                    <li>Cybersecurity</li>
+                    <li>Cloud Computing</li>
+                </ul><button>Learn More About Tech Skills</button></div>
+            <div class="sector business">
+                <h3>Business</h3>
+                <ul>
+                    <li>Project Management</li>
+                    <li>Digital Marketing</li>
+                    <li>Financial Analysis</li>
+                    <li>Sales Strategies</li>
+                </ul><button>Explore Business Skills</button></div>
+            <div class="sector medical">
+                <h3>Medical Specialties</h3>
+                <ul>
+                    <li>Surgeon</li>
+                    <li>Pediatrician</li>
+                    <li>Psychiatrist</li>
+                    <li>Anesthesiologist</li>
+                </ul><button>Learn More About Medical Specialties</button></div>
+            <div class="sector others">
+                <h3>Others</h3>
+                <ul>
+                    <li>Agriculture</li>
+                    <li>Literature</li>
+                    <li>Sports</li>
+                    <li>Law</li>
+                </ul><button>Learn More About Other Skills</button></div>
+        </div>
+    </section>
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Connect: "Sign up and choose a sector to find the right mentor."</li>
+            <li>Learn: "Engage in personalized sessions focused on your skills."</li>
+            <li>Grow: "Apply your new skills in real-world scenarios."</li>
+        </ol>
+    </section>
+    <section class="mentors">
+        <h2>Meet Our Mentors</h2>
+        <p>Experienced professionals ready to guide you.</p>
+        <div class="mentor-profiles">
+            <div class="mentor-profile active">
+                <h3>Mentor 1</h3>
+                <p>This is mentor 1.</p>
+            </div>
+            <div class="mentor-profile">
+                <h3>Mentor 2</h3>
+                <p>This is mentor 2.</p>
+            </div>
+            <div class="mentor-profile">
+                <h3>Mentor 3</h3>
+                <p>This is mentor 3.</p>
+            </div>
+        </div><button class="prev" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Prev</button><button class="next" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Next</button></section>
+    <section class="success-stories">
+        <h2>Success Stories</h2>
+        <p>See how SkillPlus has transformed careers.</p>
+        <div class="quote-carousel">
+            <div class="success-story active">
+                <h3>Story 1</h3>
+                <p>This is story 1.</p>
+            </div>
+            <div class="success-story">
+                <h3>Story 2</h3>
+                <p>This is story 2.</p>
+            </div>
+            <div class="success-story">
+                <h3>Story 3</h3>
+                <p>This is story 3.</p>
+            </div>
+        </div><button class="prev-story">Prev</button><button class="next-story">Next</button></section>
+    <section class="resources">
+        <h2>Resources</h2>
+        <p>Valuable resources to enhance your learning journey.</p>
+        <div class="featured-articles">
+            <!-- featured articles will be displayed here -->
+        </div>
+    </section>
+    <section class="get-involved">
+        <h2>Get Involved</h2>
+        <form class="get-involved"><button>Become a Mentor</button><button>Join as a Mentee</button></form>
+        <p>Contribute to the community or seek guidance—SkillPlus welcomes you!</p>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</li><li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <!-- social media links will be displayed here -->
+        </div>
+        <div class="newsletter">
+            <form><input type="email" placeholder="Enter your email address"><button>Subscribe</button></form>
+        </div>
+    </footer>
+    <div class="container" id="login-form" style="display: none;">
+        <!-- index.html -->
+        <div class="container" id="signup" style="display:none;"><span class="close">&times;
+                    </span>
+            <h1 class="form-title">Register</h1>
+            <form method="post" action="">
+                <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+                <div class="input-group"><i class="fas fa-user"></i><label for="fName">First Name</label><input type="text" id="fName" placeholder="First Name" required></div>
+                <div class="input-group"><i class="fas fa-user"></i><label for="lName">Last Name</label><input type="text" id="lName" placeholder="Last Name" required></div>
+                <div class="input-group"><i class="fas fa-envelope"></i><label for="rEmail">Email</label><input type="email" id="rEmail" placeholder="Email" required></div>
+                <div class="input-group"><i class="fas fa-lock"></i><label for="rPassword">Password</label><input type="password" id="rPassword" placeholder="Password" required></div><button class="btn" id="submitSignUp" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Sign Up</button></form>
+            <p class="or">----------or-------- </p>
+            <div class="icons"><i class="fab fa-google"></i><i class="fab fa-facebook"></i></div>
+            <div class="links">
+                <p>Already Have Account ?</p><button id="signInButton" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Sign In</button></div>
+        </div>
+        <div class="container" id="signIn"><span class="close">&times;
+                    </span>
+            <h1 class="form-title">Sign In</h1>
+            <form method="post" action="">
+                <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+                <div class="input-group"><i class="fas fa-envelope"></i><label for="signInEmail">Email</label><input type="email" id="signInEmail" placeholder="Email" required></div>
+                <div class="input-group"><i class="fas fa-lock"></i><label for="signInPassword">Password</label><input type="password" id="signInPassword" placeholder="Password" required></div><button class="btn" id="submitSignIn" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Sign In</button></form>
+            <p class="or">----------or-------- </p>
+            <div class="icons"><i class="fab fa-google"></i><i class="fab fa-facebook"></i></div>
+            <div class="links">
+                <p>Don't have account yet?</p>
+                <button id="signUpButton" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Sign Up</button></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="firebaseauth.js"></script>
+    <script>
+        // script.js
+        const loginLink = document.getElementById('login-link');
+        const loginForm = document.getElementById('login-form');
+        loginForm.style.display = 'none'; // Hide the login form by default
+        loginLink.addEventListener('click', () => {
+                loginForm.style.display = 'block'; // Show the login form when the user clicks on the "Login" button
+                const signUpForm = document.getElementById('signup');
+                const signInForm = document.getElementById('signIn');
+                signUpForm.style.display = 'none';
+                signInForm.style.display = 'block';
+            }
+
+        );
+        const signUpButton = document.getElementById('signUpButton');
+        const signInButton = document.getElementById('signInButton');
+        const signUpForm = document.getElementById('signup');
+        const signInForm = document.getElementById('signIn');
+        signUpButton.addEventListener('click', () => {
+                signUpForm.style.display = 'block';
+                signInForm.style.display = 'none';
+            }
+
+        );
+        signInButton.addEventListener('click', () => {
+                signUpForm.style.display = 'none';
+                signInForm.style.display = 'block';
+            }
+
+        );
+        const closeButton = document.querySelectorAll('.close');
+        closeButton.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const loginForm = document.getElementById('login-form');
+                    const signUpForm = document.getElementById('signup');
+                    const signInForm = document.getElementById('signIn');
+                    loginForm.style.display = 'none';
+                    signUpForm.style.display = 'none';
+                    signInForm.style.display = 'none';
+                });
+            }
+
+        );
+    </script>
+</body>
+
+</html>

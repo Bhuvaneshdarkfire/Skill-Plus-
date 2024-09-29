@@ -1,0 +1,139 @@
+<!-- course-template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>SkillPlus-Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.10.0/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.10.0/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAjFHat32xqvNViM0aXDppSqnaDVd7_MQU",
+            authDomain: "skill-plus-fd40d.firebaseapp.com",
+            databaseURL: "https://skill-plus-fd40d-default-rtdb.firebaseio.com",
+            projectId: "skill-plus-fd40d",
+            storageBucket: "skill-plus-fd40d.appspot.com",
+            messagingSenderId: "499271595326",
+            appId: "1:499271595326:web:3a52082b5ca8b0d3dda86f",
+            measurementId: "G-6WJ9XRHPPK"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <div class="course-container">
+        <h1 class="course-title"></h1>
+        <div class="course-content">
+            <h2>Required Skills</h2>
+            <ul class="required-skills"></ul>
+            <h2>Basic Questions</h2>
+            <ul class="basic-questions"></ul>
+            <h2>YouTube Playlists</h2>
+            <ul class="youtube-playlists"></ul>
+            <h2>Courses</h2>
+            <h3>Free Courses</h3>
+            <ul class="free-courses"></ul>
+            <h3>Paid Courses</h3>
+            <ul class="paid-courses"></ul>
+            <h2>Best Companies</h2>
+            <ul class="best-companies"></ul>
+            <button class="mentor-button">Mentor</button>
+            <h2>Full Course Data</h2>
+            <pre class="full-course-data"></pre>
+        </div>
+    </div>
+
+    <script>
+        console.log("Course Template Loaded");
+
+        const courseId = localStorage.getItem('courseId');
+        console.log("Course ID:", courseId);
+
+        const db = firebase.firestore();
+        const courseRef = db.collection("courses").doc(courseId);
+
+        courseRef.get().then((doc) => {
+                console.log("Course Data:", doc.data());
+                const courseData = doc.data();
+                const courseTitle = document.querySelector('.course-title');
+                const requiredSkills = document.querySelector('.required-skills');
+                const basicQuestions = document.querySelector('.basic-questions');
+                const youtubePlaylists = document.querySelector('.youtube-playlists');
+                const freeCourses = document.querySelector('.free-courses');
+                const paidCourses = document.querySelector('.paid-courses');
+                const bestCompanies = document.querySelector('.best-companies');
+                const fullCourseData = document.querySelector('.full-course-data');
+
+                courseTitle.textContent = courseData.title;
+
+                if (courseData.requiredSkills) {
+                    courseData.requiredSkills.forEach((skill) => {
+                        const skillListItem = document.createElement('li');
+                        skillListItem.textContent = skill;
+                        requiredSkills.appendChild(skillListItem);
+                    });
+                }
+
+                if (courseData.basicQuestions) {
+                    courseData.basicQuestions.forEach((question) => {
+                        const questionListItem = document.createElement('li');
+                        questionListItem.textContent = question.question + ': ' + question.answer;
+                        basicQuestions.appendChild(questionListItem);
+                    });
+                }
+
+                if (courseData.youtubePlaylists) {
+                    courseData.youtubePlaylists.forEach((playlist) => {
+                        const playlistListItem = document.createElement('li');
+                        const playlistLink = document.createElement('a');
+                        playlistLink.href = playlist.url;
+                        playlistLink.textContent = playlist.name;
+                        playlistListItem.appendChild(playlistLink);
+                        youtubePlaylists.appendChild(playlistListItem);
+                    });
+                }
+
+                if (courseData.courses && courseData.courses.free) {
+                    courseData.courses.free.forEach((course) => {
+                        const courseListItem = document.createElement('li');
+                        const courseLink = document.createElement('a');
+                        courseLink.href = course.url;
+                        courseLink.textContent = course.name;
+                        courseListItem.appendChild(courseLink);
+                        freeCourses.appendChild(courseListItem);
+                    });
+                }
+
+                if (courseData.courses && courseData.courses.paid) {
+                    courseData.courses.paid.forEach((course) => {
+                        const courseListItem = document.createElement('li');
+                        const courseLink = document.createElement('a');
+                        courseLink.href = course.url;
+                        courseLink.textContent = course.name;
+                        courseListItem.appendChild(courseLink);
+                        paidCourses.appendChild(courseListItem);
+                    });
+                }
+
+                if (courseData.bestCompanies) {
+                    courseData.bestCompanies.forEach((company) => {
+                        const companyListItem = document.createElement('li');
+                        companyListItem.textContent = company;
+                        bestCompanies.appendChild(companyListItem);
+                    });
+                }
+            })
+            .catch((error) => {
+                console.log("Error getting document:", error);
+            });
+    </script>
+</body>
+
+</html>

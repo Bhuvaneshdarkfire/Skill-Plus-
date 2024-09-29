@@ -1,0 +1,831 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 3.8em;
+    z-index: 1000;
+    text-align: center;
+    /* Add this line to ensure the header is on top of other elements */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    margin-right: 210px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+}
+
+header nav ul li {
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+header nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 2px;
+    font-size: 18px;
+}
+
+.logo {
+    font-size: 90px;
+    font-weight: bold;
+    margin-top: -19px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+}
+
+.hero {
+    background-image: url('Background.jpg');
+    background-size: 100% 100%;
+    /* Changed to 100% 100% */
+    background-position: center;
+    /* Changed to center */
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-left: 220px;
+    padding-top: 120px;
+    background-blend-mode: screen;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.about {
+    padding: 20px;
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.skills {
+    padding: 20px;
+}
+
+.skills h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.skills p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sectors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sector h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sector ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+.sector li {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.sector button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sector.technology {
+    background-image: url('Tech.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    /* Add this line to make the text white */
+}
+
+.sector.business {
+    background-image: url('Bussiness.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    /* Add this line to make the text white */
+}
+
+.sector.medical {
+    background-image: url('medical.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    /* Add this line to make the text white */
+}
+
+.sector.others {
+    background-image: url('others.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    /* Add this line to make the text white */
+}
+
+.how-it-works {
+    padding: 20px;
+}
+
+.how-it-works h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.how-it-works ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.how-it-works li {
+    margin-bottom: 10px;
+}
+
+.mentors {
+    padding: 20px;
+}
+
+.mentors h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.mentors p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.mentor-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mentor-profile {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.success-stories {
+    padding: 20px;
+}
+
+.success-stories h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-stories p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.quote-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.quote {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resources {
+    padding: 20px;
+}
+
+.resources h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.resources p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.featured-articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.featured-article {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.get-involved {
+    padding: 20px;
+}
+
+.get-involved h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.get-involved button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.get-involved p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer li {
+    margin-right: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social-media i {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.newsletter {
+    margin-top: 20px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 50%;
+    font-size: 18px;
+}
+
+.newsletter button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#login-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+#login-form .container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+}
+
+#login-form .container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#login-form .container form {
+    margin-top: 20px;
+}
+
+#login-form .container input[type="text"],
+#login-form .container input[type="email"],
+#login-form .container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-form .container button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form .container button[type="submit"]:hover {
+    background-color: #555;
+}
+
+#login-form .container .links {
+    margin-top: 20px;
+}
+
+#login-form .container .links p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#login-form .container .links button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form .container .links button:hover {
+    background-color: #555;
+}
+
+#login-form .container .icons {
+    margin-top: 20px;
+}
+
+#login-form .container .icons i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+#login-form .container .recover {
+    margin-top: 20px;
+}
+
+#login-form .container .recover a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+#login-form .container .recover a:hover {
+    color: #555;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+#login-link {
+    cursor: pointer;
+    z-index: 1000;
+    position: relative;
+}
+
+#login-link:hover {
+    color: #333;
+}
+
+#signUpButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signUpButton:hover {
+    background-color: #555;
+}
+
+#signInButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signInButton:hover {
+    background-color: #555;
+}
+
+
+/* style.css */
+
+#signInButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signUpButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+    overflow-y: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-content .close:hover {
+    color: #333;
+}
+
+.popup-content .content {
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.popup-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.popup-content {
+    position: absolute;
+    top: 60%;
+    /* Change the top property to 60% */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+    overflow-y: auto;
+    /* Add overflow-y: auto to make the scroll work */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-content .close:hover {
+    color: #333;
+}
+
+.popup-content .content {
+    overflow-y: auto;
+    padding: 20px;
+}
+
+#search-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.search-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+
+#search-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#search-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#course-list {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.course {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    color: #000;
+}
+
+.course h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.course p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+#calendar-container {
+    display: none;
+}
+
+
+/* style.css */
+
+.course-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.course-content {
+    margin-bottom: 20px;
+}
+
+.required-skills,
+.basic-questions,
+.advanced-questions,
+.youtube-playlists,
+.free-courses,
+.paid-courses,
+.best-companies {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.required-skills li,
+.basic-questions li,
+.advanced-questions li,
+.youtube-playlists li,
+.free-courses li,
+.paid-courses li,
+.best-companies li {
+    margin-bottom: 10px;
+}
+
+.youtube-playlists li a,
+.free-courses li a,
+.paid-courses li a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+.youtube-playlists li a:hover,
+.free-courses li a:hover,
+.paid-courses li a:hover {
+    color: #23527c;
+}
+
+.mentor-button {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mentor-button:hover {
+    background-color: #23527c;
+}
+
+.course-card {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    margin-bottom: 20px;
+}
+
+.view-course {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-course:hover {
+    background-color: #3e8e41;
+}
